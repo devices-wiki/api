@@ -4,7 +4,6 @@
   "description": "The devices.wiki backend API",
   "main": "src/index.js",
   "type": "module",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
