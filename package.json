@@ -1,8 +1,9 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "Welcome to the heart of devices.wiki - our robust and flexible API backend designed to power seamless communication and data management for your project. This API serves as the backbone, connecting various components and facilitating efficient interaction between your front-end applications and the server.",
+  "description": "The devices.wiki backend API",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
