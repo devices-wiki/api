@@ -1,11 +1,11 @@
 // This is the sample laptop that is used for debugging. Will be removed when a proper database is implemented
 // Dell Inspiron 7306 2n1 Silver Blueprint
 
-import CPU from "./hardware/classes/CPU";
-import Laptop from "./hardware/classes/Laptop";
-import RAM from "./hardware/classes/RAM";
-import Storage from "./hardware/classes/Storage";
-import Display from "./hardware/classes/Display";
+import CPU from "./hardware/CPU";
+import Laptop from "./hardware/Laptop";
+import RAM from "./hardware/RAM";
+import Storage from "./hardware/Storage";
+import Display from "./hardware/Display";
 
 
 // Creation of Model CPU
@@ -16,7 +16,7 @@ function createSampleCpu() {
     return new CPU(
         100873151,
         "Intel Core i5-1135G7",
-        "GenuineIntel",
+        CPU.Vendor.Intel,
         28,
         "X64",
         "Intel Iris XE Graphics",
@@ -37,7 +37,7 @@ const sampleRam = new RAM(
 )
 
 // Display
-const screen = new Display(100873154, "Dell", "Dell 13\" P125G002", 337.82, 60, "16:9", {x: 1920, y: 1080}, 300, "IPS", "Anti-Reflective", true, false, null, true)
+const screen = new Display(100873154, "Dell", "Dell 13\" P125G002", 337.82, 60, "16:9", {x: 1920, y: 1080}, 300, Display.Technology.IPS, "Anti-Reflective", true, false, null, true)
 
 // Storage
 const drive1 = new Storage(100873152, "Intel® Optane™ Memory H10", "Intel", "NVMe", 32767)

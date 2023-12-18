@@ -1,4 +1,4 @@
-export default class Display {
+class Display {
     public readonly id: number;
     public readonly vendor: string;
     public readonly model: string | null;
@@ -12,7 +12,7 @@ export default class Display {
     public readonly resolution: {x: number, y: number}
     // Peak brightness in nits
     public readonly peakBrightness: number;
-    public readonly panelType: "OLED" | "LCD" | "IPS" | "TN" | "CRT" | "PLASMA";
+    public readonly panelType: Display.Technology;
     public readonly coatings: string | null;
     public readonly touchscreen: boolean;
     public readonly detatchableKeyboard: boolean;
@@ -20,7 +20,7 @@ export default class Display {
     public readonly penProtocol: string | null;
     public readonly supports360Rotation: boolean;
 
-    constructor(id: number, vendor: string, model: string | null, screenSize: number, refreshRate: number, aspectRatio: string, resolution: {x: number, y: number}, peakBrightness: number, panelType: "OLED" | "LCD" | "IPS" | "TN" | "CRT" | "PLASMA", coatings: string | null, touchscreen: boolean, detatchableKeyboard: boolean, penProtocol: string | null, supports360Rotation: boolean) {
+    public constructor(id: number, vendor: string, model: string | null, screenSize: number, refreshRate: number, aspectRatio: string, resolution: {x: number, y: number}, peakBrightness: number, panelType: Display.Technology, coatings: string | null, touchscreen: boolean, detatchableKeyboard: boolean, penProtocol: string | null, supports360Rotation: boolean) {
         this.id = id;
         this.vendor = vendor;
         this.model = model;
@@ -37,3 +37,9 @@ export default class Display {
         this.supports360Rotation = supports360Rotation;
     }
 }
+
+namespace Display {
+    export enum Technology {OLED, LCD, IPS, TN, CRT, PLASMA}
+}
+
+export default Display;

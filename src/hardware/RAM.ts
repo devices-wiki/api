@@ -4,7 +4,7 @@ class RAM {
     public readonly channels: number
     public readonly memoryList: RAM.Memory[]
 
-    constructor(model: string, ecc: boolean, channels: number, memory: RAM.Memory[]) {
+    public constructor(model: string, ecc: boolean, channels: number, memory: RAM.Memory[]) {
         this.model = model;
         this.ecc = ecc;
         this.channels = channels;
@@ -29,7 +29,7 @@ namespace RAM {
         public readonly capacity: number;
         public readonly frequency: number;
 
-        constructor(nModules: number, capacity: number, frequency: number) {
+        public constructor(nModules: number, capacity: number, frequency: number) {
             this.nModules = nModules;
             this.capacity = capacity;
             this.frequency = frequency;

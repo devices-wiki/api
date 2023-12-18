@@ -1,7 +1,7 @@
 class CPU {
     public readonly id: number;
     public readonly model: string;
-    public readonly vendor: string;
+    public readonly vendor: CPU.Vendor;
     public readonly tdp: number;
     public readonly architecture: string;
     public readonly graphics: string | null;
@@ -11,7 +11,7 @@ class CPU {
     public readonly releaseDate: Date | null
 
 
-    constructor(id: number, model: string, vendor: string, tdp: number, architecture: string, graphics: string | null, cores: CPU.Core[], releaseDate: Date | null, cache: {l1: number, l2: number, l3: number | null}) {
+    public constructor(id: number, model: string, vendor: CPU.Vendor, tdp: number, architecture: string, graphics: string | null, cores: CPU.Core[], releaseDate: Date | null, cache: {l1: number, l2: number, l3: number | null}) {
         this.id = id;
         this.model = model;
         this.vendor = vendor;
@@ -39,7 +39,8 @@ namespace CPU {
         public readonly boostFrequency: number;
         public readonly threadsPerCore: number;
         public readonly nCores: number;
-        constructor(level: number, frequency: number, boostFrequency: number, threadsPerCore: number, nCores: number) {
+        
+        public constructor(level: number, frequency: number, boostFrequency: number, threadsPerCore: number, nCores: number) {
             this.level = level;
             this.frequency = frequency;
             this.threadsPerCore = threadsPerCore;
@@ -47,6 +48,8 @@ namespace CPU {
             this.nCores = nCores;
         }
     }
+
+    export enum Vendor {Intel, AMD, Qualcomm, Apple, Exynos, Tensor, Mediatek}
 }
 
 export default CPU;

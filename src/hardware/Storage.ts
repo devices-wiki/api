@@ -5,7 +5,7 @@ export default class Storage {
     public readonly type: "eMMC" | "HDD" | "SSD" | "NVMe";
     public readonly capacity: number;
 
-    constructor(id: number, model: string, vendor: string, type: "eMMC" | "HDD" | "SSD" | "NVMe", capacity: number) {
+    public constructor(id: number, model: string, vendor: string, type: "eMMC" | "HDD" | "SSD" | "NVMe", capacity: number) {
         this.id = id;
         this.model = model;
         this.vendor = vendor;

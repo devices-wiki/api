@@ -1,7 +1,7 @@
-import CPU from "./CPU";
-import RAM from "./RAM";
-import Storage from "./Storage";
-import Display from "./Display";
+import CPU from "./CPU.js";
+import RAM from "./RAM.js";
+import Storage from "./Storage.js";
+import Display from "./Display.js";
 
 export default class Laptop {
     public readonly id: number;
@@ -28,7 +28,7 @@ export default class Laptop {
     // List all cellular bands if appliicable
     public readonly cellularBands: string[] | null;
 
-    constructor(id: number, model: string, brand: string, cpu: CPU, ram: RAM, storage: Storage[], screen: Display, dimensions: {x: number, y: number, z: number}, weight: number, material: string, launchDate: Date | null, batteryCapacity: number, microphonePresent: boolean, camera: {resolution: number, fps: number} | null, WiFiConnectivity: {"version": string | number, "dualBand": boolean} | null, bluetoothVersion: number | null, cellularBands: string[] | null) {
+    public constructor(id: number, model: string, brand: string, cpu: CPU, ram: RAM, storage: Storage[], screen: Display, dimensions: {x: number, y: number, z: number}, weight: number, material: string, launchDate: Date | null, batteryCapacity: number, microphonePresent: boolean, camera: {resolution: number, fps: number} | null, WiFiConnectivity: {"version": string | number, "dualBand": boolean} | null, bluetoothVersion: number | null, cellularBands: string[] | null) {
         this.id = id;
         this.model = model;
         this.brand = brand;
